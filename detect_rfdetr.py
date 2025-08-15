@@ -5,16 +5,16 @@ from tqdm import tqdm
 import json
 
 # Tentukan jalur video input dan output
-SOURCE_VIDEO_PATH = "D:/project-computer-vision/exavator-load-detection/data/raw/exa_day.mp4"
-TARGET_VIDEO_PATH = "D:/project-computer-vision/exavator-load-detection/data/processed/exavator_processed.mp4"
-TARGET_CSV_PATH = "D:/project-computer-vision/exavator-load-detection/data/processed/bucket_tracking.csv"
+SOURCE_VIDEO_PATH = "<SOURCE_VIDEO_PATH>"
+TARGET_VIDEO_PATH = "<TARGET_VIDEO_PATH>"
+TARGET_CSV_PATH = "<TARGET_CSV_PATH>"
 
 # Load class mapping dari file JSON
-with open("D:/project-computer-vision/exavator-load-detection/src/classes.json", "r") as f:
+with open("<CLASS_MAPPING_JSON_PATH>", "r") as f:
     class_mapping = json.load(f)
 
 # Inisialisasi model RFDETRSmall / RFDETRNano
-model = RFDETRNano(pretrain_weights="D:/project-computer-vision/exavator-load-detection/model/RF-DETR_25epo_Nano/checkpoint_best_ema.pth")
+model = RFDETRNano(pretrain_weights="<PRETRAIN_WEIGHTS_PATH>")
 model.optimize_for_inference()
 
 # Buat generator untuk frame video
