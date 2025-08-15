@@ -51,7 +51,7 @@ class RTSPImageCapture:
     def _load_model(self):
         """Memuat model deteksi objek RF-DETR"""
         try:
-            model_path = "D:/project-computer-vision/exavator-load-detection/model/RF-DETR_25epo_Nano/checkpoint_best_ema.pth"
+            model_path = "<SOURCE_MODEL_PATH>"
             if not os.path.exists(model_path):
                 raise FileNotFoundError(f"File model tidak ditemukan: {model_path}")
             
@@ -73,7 +73,7 @@ class RTSPImageCapture:
     def _load_class_mapping(self):
         """Memuat pemetaan ID kelas ke nama kelas"""
         try:
-            classes_file = "D:/project-computer-vision/exavator-load-detection/src/classes.json"
+            classes_file = "<CLASS_MAPPING_JSON_PATH>"
             if not os.path.exists(classes_file):
                 raise FileNotFoundError(f"File classes tidak ditemukan: {classes_file}")
             
@@ -253,7 +253,7 @@ class RTSPImageCapture:
 
 def main():
     """Fungsi main untuk menginisialisasi dan menjalankan aplikasi"""
-    rtsp_url = 'rtsp://admin:Bengawanai_2024@192.168.1.101:554/Streaming/Channels/101'
+    rtsp_url = '<RTSP_STREAM_URL>'
     output_dir = "output"
     try:
         image_capture = RTSPImageCapture(rtsp_url, output_dir)
